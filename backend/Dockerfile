@@ -5,6 +5,7 @@ WORKDIR /code
 COPY requirements.txt /code
 RUN --mount=type=cache,target=/root/.cache/pip \
     pip3 install -r requirements.txt
+RUN pip install --upgrade werkzeug && pip install --upgrade 
 
 COPY . .
 
